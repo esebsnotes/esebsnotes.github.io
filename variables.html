@@ -1020,60 +1020,109 @@ body p {
 </style>
                    <link rel="stylesheet" href="css/dracula.css"><link rel="stylesheet" href="css/katex.min.css"><link rel="stylesheet" href="css/codemirror.css"><link rel="stylesheet" href="css/main.min.css">
                  </head>
-                 <body><h2 id="Introduction" data-line="0">Introduction</h2>
+                 <body><h1 id="Variables-Expressions-Assignment" data-line="0">Variables, Expressions, Assignment</h1>
 <ul>
-<li data-line="1"><a href="#First-Example">First Example</a>
-<ul>
-<li data-line="2"><a href="#SourceCode">Source Code</a></li>
-<li data-line="3"><a href="#Terminal">Terminal</a></li>
+<li data-line="1"><a href="#Example">Example</a></li>
+<li data-line="2"><a href="#Identifiers">Identifiers</a></li>
+<li data-line="3"><a href="#Variable-Declaration">Variable Declaration</a></li>
 </ul>
-</li>
-<li data-line="4"><a href="#Programming-Language-Levels">Programming Language Levels</a></li>
-<li data-line="5"><a href="#Syntax-vs-Semantics">Syntax vs Semantics</a></li>
-</ul>
-<h3 id="First-Example" data-line="7">First Example</h3>
-<h4 id="Source-Code" data-line="8">Source Code</h4>
-<pre class="code CodeMirror" data-line="9">
+<h2 id="Example" data-line="5">Example</h2>
+<pre class="code CodeMirror" data-line="6">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span></span>
-        <code class="java">public class Test {
-  // 1 line comment
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span></span>
+        <code class="java">public class Ex {
   public static void main(String args[]) {
-    System.out.println(&quot;Hello World!&quot;);
-    /*
-    Long Comment
-    */
+    int jan;
+    jan = 30 + 1;
+    System.out.print(&quot;Jan has &quot; + jan + &quot; days&quot;);
   }
 }
 </code>
-      </pre><h4 id="Terminal" data-line="20">Terminal</h4>
-<p data-line="21">Compile:</p>
-<pre class="code CodeMirror" data-line="22">
+      </pre><hr />
+<h2 id="Identifiers" data-line="16">Identifiers</h2>
+<ul>
+<li data-line="17"><strong>Identifier:</strong> a string of characters used as a name for a class method or a variable.</li>
+<li data-line="18">Can contain letters, digits, and the underscore symbol.
+<ul>
+<li data-line="19">May not start with digit (always start with letter)</li>
+</ul>
+</li>
+<li data-line="20">Case sensitive (This != this)</li>
+<li data-line="21">Types
+<ul>
+<li data-line="22">Programmer defined</li>
+<li data-line="23">“Other” programmer defined (API)
+<ul>
+<li data-line="24">Modifiable</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="25">Reserved and keywords
+<ul>
+<li data-line="26">Can’t use as an identifier</li>
+<li data-line="27">Reserved: const, goto, etc.</li>
+<li data-line="28">Keywords: class, public, if, etc.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="Variable-Declaration" data-line="31">Variable Declaration</h2>
+<ul>
+<li data-line="32">
+<p data-line="32"><strong>Variable:</strong> identifier that names a value</p>
+<ul>
+<li data-line="33">Type (strongly and statically typed)</li>
+<li data-line="34">Storage location</li>
+</ul>
+</li>
+<li data-line="36">
+<p data-line="36">Example:</p>
+</li>
+</ul>
+<pre class="code CodeMirror" data-line="37">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
-        <code class="Terminal">javac Test.java
+        <code class="java">int x;
 </code>
-      </pre><p data-line="25">Run</p>
-<pre class="code CodeMirror" data-line="26">
+      </pre><ul>
+<li data-line="40">Can be constant (can’t be changed)</li>
+</ul>
+<pre class="code CodeMirror" data-line="41">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
-        <code class="Terminal">java Test
+        <code class="java">final int MONTHS;
 </code>
       </pre><hr />
-<h3 id="Programming-Language-Levels" data-line="31">Programming Language Levels</h3>
-<img src="http://www.plantuml.com/plantuml/png/bLHBJiCm4Dtd55wn6UK2B515nG844X9SOAYjDbBgL8vh4MaEJsgR-XCx52yiV-RpvlcDDwD6fNcd4HjM6T0M1bJDoSwlAFTdt8lH7_uL7QxJUlGuIIbe0XQoar9OMarJS31h3gQfbLQ12ajWz2orK2SbjE21aIixmBR3yTJrWgVm82_SLqUBwpHRQHtSg4A6AQs3cuafYLDxSD16zLWtpmQan0J8ir74Yyr3Jz_tx7tIXq6I2s9FjkxoOpYhdM1wO3YEulZLJzJG7VjKACSUBp6iNGmkGjBMaMJz00L5qKrAMkZALEHnOrT02yldZ-gTgRZWAFPpLCqB6aory8QxGoV5B3mkN2sqZYEd1ah_HnucSuC5mv3wnzi7y4sXm6qV9-tmmgz1K8_A7-EVcJT2Sljb_W00" alt="uml diagram" />
+<h2 id="Assignment-Statements" data-line="45">Assignment Statements</h2>
+<ul>
+<li data-line="46"><strong>I-value:</strong> Left side of the =
+<ul>
+<li data-line="47">Must be a varible identifier</li>
+</ul>
+</li>
+<li data-line="48">Right side must be an expression</li>
+<li data-line="49">Variables are expressions</li>
+<li data-line="50">“=” is the assignment operator</li>
+<li data-line="51">Assignment of values to variables must be type compatible at compile time</li>
+<li data-line="52">Example:</li>
+</ul>
+<pre class="code CodeMirror" data-line="53">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
+        <code class="java">int x;
+x = 5 + 7;
+// OR
+int y = x;
+</code>
+      </pre><hr />
+<h2 id="Primitive-Types" data-line="60">Primitive Types</h2>
+<p data-line="61"><strong>Integers:</strong> byte (8-bit), short (16-bit), int (32-bit), long (64-bit)<br />
+<strong>Floats:</strong> float (32-bit), double (64-bit)<br />
+<strong>Characters:</strong> char (16-bit)<br />
+—&gt; Java uses Unicode<br />
+—&gt; Single quotes</p>
+<p data-line="67"><strong>Booleans:</strong> true or false</p>
 <hr />
-<h3 id="Syntax-vs-Semantics" data-line="61">Syntax vs Semantics</h3>
-<p data-line="62">-<strong>Syntax:</strong> structure/form of that specific programming languafe specifies.<br />
--<strong>Semantics:</strong> meaning assign to the characters, symbols, and words.</p>
-<hr />
-<h3 id="Object" data-line="66">Object</h3>
-<p data-line="67"><strong>State</strong> (attributes)<strong>:</strong> parameters<br />
-<strong>Behaviors:</strong> methods</p>
-<hr />
-<h3 id="Definitions" data-line="71">Definitions</h3>
-<p data-line="72"><strong>Class:</strong> Blueprints to create objects<br />
-<strong>Encapsulation:</strong> wrapping up of the data under a single unit (protective shield)<br />
-<strong>Inheritance:</strong> classes form hierarchies (Override methods, superclasses, extends)</p>
 </body>
               </html>
