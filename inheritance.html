@@ -1165,30 +1165,31 @@ body p {
 <h2 id="Super" data-line="80">Super</h2>
 <dl>
 <dt data-line="81">super</dt>
-<dd data-line="82">access to parents members (“this()” for parent class)</dd>
+<dd data-line="82">access to parents members</dd>
+<dd data-line="83">“this()” for parent class</dd>
 </dl>
 <ul>
-<li data-line="83">Common use: To invoke a parent’s constructor
+<li data-line="84">Common use: To invoke a parent’s constructor
 <ul>
-<li data-line="84">Can use constructors with private parameters/data, as they include</li>
+<li data-line="85">Can use constructors with private parameters/data, as they include</li>
 </ul>
 </li>
-<li data-line="85">super() will be inserted if is not stated
+<li data-line="86">super() will be inserted if is not stated
 <ul>
-<li data-line="86">has to be first</li>
-<li data-line="87">If a super class doesn’t include a no-args, then the subclass constructors must include a super call</li>
+<li data-line="87">has to be first</li>
+<li data-line="88">If a super class doesn’t include a no-args, then the subclass constructors must include a super call</li>
 </ul>
 </li>
-<li data-line="88">Constructors are finished from “Top to bottom”
+<li data-line="89">Constructors are finished from “Top to bottom”
 <ul>
-<li data-line="89">Parent class constructors are finished first</li>
+<li data-line="90">Parent class constructors are finished first</li>
 </ul>
 </li>
 </ul>
 <hr />
-<h3 id="Example-of-Super" data-line="93">Example of Super</h3>
-<h5 id="Superclass" data-line="95">Superclass</h5>
-<pre class="code CodeMirror" data-line="97">
+<h3 id="Example-of-Super" data-line="94">Example of Super</h3>
+<h5 id="Superclass" data-line="96">Superclass</h5>
+<pre class="code CodeMirror" data-line="98">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span></span>
         <code class="java">public class Person {
@@ -1203,8 +1204,8 @@ body p {
   }
 }
 </code>
-      </pre><h5 id="Subclass" data-line="111">Subclass</h5>
-<pre class="code CodeMirror" data-line="113">
+      </pre><h5 id="Subclass" data-line="112">Subclass</h5>
+<pre class="code CodeMirror" data-line="114">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
         <code class="java">public class Student {
@@ -1220,7 +1221,7 @@ body p {
   }
 }
 </code>
-      </pre><pre class="code CodeMirror" data-line="128">
+      </pre><pre class="code CodeMirror" data-line="129">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span></span>
         <code class="java">public class Dentist extends Person {
@@ -1238,17 +1239,17 @@ body p {
   }
 }
 </code>
-      </pre><h2 id="Glossary" data-line="144">Glossary</h2>
+      </pre><h2 id="Glossary" data-line="145">Glossary</h2>
 <dl>
-<dt data-line="146">Child Class</dt>
-<dd data-line="147">class that “extends” a super class</dd>
-<dd data-line="148">sub class</dd>
-<dd data-line="149">derived class</dd>
-<dt data-line="151">Parent Class</dt>
-<dd data-line="152">super class</dd>
-<dd data-line="153">base class</dd>
-<dt data-line="155">super</dt>
-<dd data-line="156">access to parents members (“this()” for parent class)</dd>
+<dt data-line="147">Child Class</dt>
+<dd data-line="148">class that “extends” a super class</dd>
+<dd data-line="149">sub class</dd>
+<dd data-line="150">derived class</dd>
+<dt data-line="152">Parent Class</dt>
+<dd data-line="153">super class</dd>
+<dd data-line="154">base class</dd>
+<dt data-line="156">super</dt>
+<dd data-line="157">access to parents members (“this()” for parent class)</dd>
 </dl>
 </body>
               </html>

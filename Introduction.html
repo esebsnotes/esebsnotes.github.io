@@ -1020,20 +1020,24 @@ body p {
 </style>
                    <link rel="stylesheet" href="css/dracula.css"><link rel="stylesheet" href="css/katex.min.css"><link rel="stylesheet" href="css/codemirror.css"><link rel="stylesheet" href="css/main.min.css">
                  </head>
-                 <body><h2 id="Introduction" data-line="0">Introduction</h2>
+                 <body><h1 id="Introduction" data-line="0">Introduction</h1>
+
 <ul>
-<li data-line="1"><a href="#First-Example">First Example</a>
+<li data-line="3"><a href="#First-Example">First Example</a>
 <ul>
-<li data-line="2"><a href="#SourceCode">Source Code</a></li>
-<li data-line="3"><a href="#Terminal">Terminal</a></li>
+<li data-line="4"><a href="#Source-Code">Source Code</a></li>
+<li data-line="5"><a href="#Terminal">Terminal</a></li>
 </ul>
 </li>
-<li data-line="4"><a href="#Programming-Language-Levels">Programming Language Levels</a></li>
-<li data-line="5"><a href="#Syntax-vs-Semantics">Syntax vs Semantics</a></li>
+<li data-line="6"><a href="#Programming-Language-Levels">Programming Language Levels</a></li>
+<li data-line="7"><a href="#Syntax-vs-Semantics">Syntax vs Semantics</a></li>
+<li data-line="8"><a href="#Object">Object</a></li>
+<li data-line="9"><a href="#Definitions">Definitions</a></li>
 </ul>
-<h3 id="First-Example" data-line="7">First Example</h3>
-<h4 id="Source-Code" data-line="8">Source Code</h4>
-<pre class="code CodeMirror" data-line="9">
+
+<h2 id="First-Example" data-line="13">First Example</h2>
+<h3 id="Source-Code" data-line="14">Source Code</h3>
+<pre class="code CodeMirror" data-line="15">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span></span>
         <code class="java">public class Test {
@@ -1046,34 +1050,59 @@ body p {
   }
 }
 </code>
-      </pre><h4 id="Terminal" data-line="20">Terminal</h4>
-<p data-line="21">Compile:</p>
-<pre class="code CodeMirror" data-line="22">
+      </pre><h3 id="Terminal" data-line="26">Terminal</h3>
+<p data-line="27">Compile:</p>
+<pre class="code CodeMirror" data-line="28">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
         <code class="Terminal">javac Test.java
 </code>
-      </pre><p data-line="25">Run</p>
-<pre class="code CodeMirror" data-line="26">
+      </pre><p data-line="31">Run</p>
+<pre class="code CodeMirror" data-line="32">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
         <code class="Terminal">java Test
 </code>
       </pre><hr />
-<h3 id="Programming-Language-Levels" data-line="31">Programming Language Levels</h3>
+<h2 id="Programming-Language-Levels" data-line="37">Programming Language Levels</h2>
 <img src="http://www.plantuml.com/plantuml/png/bLHBJiCm4Dtd55wn6UK2B515nG844X9SOAYjDbBgL8vh4MaEJsgR-XCx52yiV-RpvlcDDwD6fNcd4HjM6T0M1bJDoSwlAFTdt8lH7_uL7QxJUlGuIIbe0XQoar9OMarJS31h3gQfbLQ12ajWz2orK2SbjE21aIixmBR3yTJrWgVm82_SLqUBwpHRQHtSg4A6AQs3cuafYLDxSD16zLWtpmQan0J8ir74Yyr3Jz_tx7tIXq6I2s9FjkxoOpYhdM1wO3YEulZLJzJG7VjKACSUBp6iNGmkGjBMaMJz00L5qKrAMkZALEHnOrT02yldZ-gTgRZWAFPpLCqB6aory8QxGoV5B3mkN2sqZYEd1ah_HnucSuC5mv3wnzi7y4sXm6qV9-tmmgz1K8_A7-EVcJT2Sljb_W00" alt="uml diagram" />
 <hr />
-<h3 id="Syntax-vs-Semantics" data-line="61">Syntax vs Semantics</h3>
-<p data-line="62">-<strong>Syntax:</strong> structure/form of that specific programming languafe specifies.<br />
--<strong>Semantics:</strong> meaning assign to the characters, symbols, and words.</p>
-<hr />
-<h3 id="Object" data-line="66">Object</h3>
-<p data-line="67"><strong>State</strong> (attributes)<strong>:</strong> parameters<br />
-<strong>Behaviors:</strong> methods</p>
-<hr />
-<h3 id="Definitions" data-line="71">Definitions</h3>
-<p data-line="72"><strong>Class:</strong> Blueprints to create objects<br />
-<strong>Encapsulation:</strong> wrapping up of the data under a single unit (protective shield)<br />
-<strong>Inheritance:</strong> classes form hierarchies (Override methods, superclasses, extends)</p>
+<h2 id="Object" data-line="69">Object</h2>
+<dl>
+<dt data-line="72">States</dt>
+<dd data-line="73">attributes</dd>
+<dd data-line="74">parameters</dd>
+<dt data-line="75">Behaviors</dt>
+<dd data-line="76">methods</dd>
+</dl>
+<p data-line="77"><strong>Example:</strong></p>
+<pre class="code CodeMirror" data-line="78">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span></span>
+        <code class="java">public class Obj {
+   public Obj() {
+   // No args constructor
+   }
+
+   public Obj(String name) {
+      // This constructor has one parameter, name.
+   }
+}
+</code>
+      </pre><h2 id="Glossary" data-line="90">Glossary</h2>
+<dl>
+<dt data-line="91">Class</dt>
+<dd data-line="92">Blueprints to create objects</dd>
+<dt data-line="93">Encapsulation</dt>
+<dd data-line="94">wrapping up of the data under a single unit (protective shield)</dd>
+<dt data-line="95">Inheritance</dt>
+<dd data-line="96">classes form hierarchies (Override methods, superclasses, extends)</dd>
+<dt data-line="97">Object</dt>
+<dd data-line="98">Objects have states and behaviors</dd>
+<dt data-line="99">Semantics</dt>
+<dd data-line="100">meaning assign to the characters, symbols, and words.</dd>
+<dt data-line="102">Syntax</dt>
+<dd data-line="103">structure/form of that specific programming languafe specifies.</dd>
+</dl>
 </body>
               </html>
