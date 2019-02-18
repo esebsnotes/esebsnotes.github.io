@@ -1023,42 +1023,55 @@ body p {
                  <body><h1 id="Inheritance" data-line="0">Inheritance</h1>
 <pre><code>**Inheritance:** process of deriving a new class from an existing one. 
 </code></pre>
+
 <ul>
-<li data-line="3"><a href="#Parent-vs-Child">Parent vs Child</a></li>
-</ul>
-<h2 id="Parent-vs-Child" data-line="5">Parent vs Child</h2>
-<p data-line="6"><strong>Parent:</strong> super class or base class</p>
-<pre class="code CodeMirror" data-line="7">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span></span>
-        <code class="java">public class Parent {
- //Blah blah blah
-}
-</code>
-      </pre><ul>
-<li data-line="12">Can’t access the methods/data from child class (private or public)</li>
-</ul>
-<p data-line="14"><strong>Child:</strong> sub class that “extends” super class</p>
-<pre class="code CodeMirror" data-line="15">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span></span>
-        <code class="java">public class Child extends Parent {
-  //blah blah blah
-}
-</code>
-      </pre><ul>
-<li data-line="20">Can access public data/methods of parent</li>
-<li data-line="21">Can’t access private data/methods of parent
+<li data-line="5"><a href="#Parent-vs-Child">Parent vs Child</a>
 <ul>
-<li data-line="22">Gets private data, but can’t access it</li>
+<li data-line="6"><a href="#Example-of-Parent-and-Child">Example of Parent and Child</a></li>
 </ul>
 </li>
-<li data-line="23"><strong>Protected:</strong> can access from the child classes and same package</li>
-<li data-line="24">Can call parent methods without qualification, like they are from child class (Instance data)</li>
+<li data-line="7"><a href="#Super">Super</a>
+<ul>
+<li data-line="8"><a href="#Example-of-Super">Example of Super</a>
+<ul>
+<li data-line="9"><a href="#Parent-Class">Parent Class</a></li>
+<li data-line="10"><a href="#Child-Classes">Child Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2 id="Parent-vs-Child" data-line="14">Parent vs Child</h2>
+<p data-line="15"><strong>Parent:</strong> super class or base class</p>
+<pre class="code CodeMirror" data-line="16">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="java">public class Parent {}
+</code>
+      </pre><ul>
+<li data-line="19">Can’t access the methods/data from child class (private or public)</li>
+</ul>
+<p data-line="21"><strong>Child:</strong> sub class or derived class, that “extends” super class</p>
+<pre class="code CodeMirror" data-line="23">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="java">public class Child extends Parent {}
+</code>
+      </pre><ul>
+<li data-line="26">Subclasses inherit the interface and implementation of their superclass(es)</li>
+<li data-line="27">Can access public data/methods of parent</li>
+<li data-line="28">Can’t access private data/methods of parent
+<ul>
+<li data-line="29">Gets private data, but can’t access it</li>
+</ul>
+</li>
+<li data-line="30"><strong>Protected:</strong> can access from the child classes and same package</li>
+<li data-line="31">Can call parent methods without qualification, like they are from child class (Instance data)</li>
 </ul>
 <hr />
-<h3 id="Example-of-Parent-and-Child" data-line="28">Example of Parent and Child</h3>
-<pre class="code CodeMirror" data-line="30">
+<h3 id="Example-of-Parent-and-Child" data-line="35">Example of Parent and Child</h3>
+<pre class="code CodeMirror" data-line="37">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
         <code class="java">public class Vehicle {
@@ -1066,36 +1079,43 @@ body p {
   protected void go()
 }
 </code>
-      </pre><pre class="code CodeMirror" data-line="36">
+      </pre><pre class="code CodeMirror" data-line="43">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span></span>
         <code class="java">public class Car extends Vehicle {
   private void drive() {
-  int x = wheels;
-  go();
+    int x = wheels;
+    go();
   }
 }
 </code>
       </pre><hr />
-<h2 id="Super" data-line="46">Super</h2>
-<p data-line="47"><strong>super:</strong> access to parents members (“this()” for parent class)</p>
+<h2 id="Super" data-line="53">Super</h2>
+<p data-line="54"><strong>super:</strong> access to parents members (“this()” for parent class)</p>
 <ul>
-<li data-line="48">Common use: To invoke a parent’s constructor
+<li data-line="55">Common use: To invoke a parent’s constructor
 <ul>
-<li data-line="49">Can use constructors with private parameters /data</li>
+<li data-line="56">Can use constructors with private parameters /data</li>
 </ul>
 </li>
-<li data-line="50">super() will be inserted if is not stated
+<li data-line="57">super() will be inserted if is not stated
 <ul>
-<li data-line="51">has to be first (just as this())</li>
+<li data-line="58">has to be first (just as this())</li>
+<li data-line="59">If a super class doesn’t include a no-args, then the subclass constructors must include a super call</li>
+</ul>
+</li>
+<li data-line="60">Constructors are finished from “Top to bottom”
+<ul>
+<li data-line="61">Parent class constructors are finished first</li>
 </ul>
 </li>
 </ul>
 <hr />
-<h3 id="Example-of-Super" data-line="55">Example of Super</h3>
-<pre class="code CodeMirror" data-line="56">
+<h3 id="Example-of-Super" data-line="65">Example of Super</h3>
+<h5 id="Parent-Class" data-line="66">Parent Class</h5>
+<pre class="code CodeMirror" data-line="67">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span></span>
         <code class="java">public class Person {
   private String name;
 
@@ -1106,10 +1126,10 @@ body p {
   public String getName() {
     return name;
   }
-  
 }
 </code>
-      </pre><pre class="code CodeMirror" data-line="70">
+      </pre><h5 id="Child-Classes" data-line="80">Child Classes</h5>
+<pre class="code CodeMirror" data-line="81">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
         <code class="java">public class Student {
@@ -1125,15 +1145,21 @@ body p {
   }
 }
 </code>
-      </pre><pre class="code CodeMirror" data-line="85">
+      </pre><pre class="code CodeMirror" data-line="96">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span></span>
         <code class="java">public class Dentist extends Person {
   protected string degree;
   
   public Dentist(String name) {
     super(name);
+    /*If not explixitaly stated in the first line of constructor,
+    Java will insert super().
+    Exception: If you have a chained call to another
+    constructor in same class
+    */
     degree = &quot;DDS&quot;;
+    
   }
 }
 </code>
