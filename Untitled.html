@@ -1020,109 +1020,133 @@ body p {
 </style>
                    <link rel="stylesheet" href="css/dracula.css"><link rel="stylesheet" href="css/katex.min.css"><link rel="stylesheet" href="css/codemirror.css"><link rel="stylesheet" href="css/main.min.css">
                  </head>
-                 <body><h1 id="Variables-Expressions-and-Assignments" data-line="0">Variables, Expressions, and Assignments</h1>
+                 <body><h1 id="Inheritance" data-line="0">Inheritance</h1>
+<pre><code>**Inheritance:** process of deriving a new class from an existing one. 
+</code></pre>
 <ul>
-<li data-line="1"><a href="#Example">Example</a></li>
-<li data-line="2"><a href="#Identifiers">Identifiers</a></li>
-<li data-line="3"><a href="#Variable-Declaration">Variable Declaration</a></li>
+<li data-line="3"><a href="#Parent-vs-Child">Parent vs Child</a></li>
 </ul>
-<h2 id="Example" data-line="5">Example</h2>
-<pre class="code CodeMirror" data-line="6">
+<h2 id="Parent-vs-Child" data-line="5">Parent vs Child</h2>
+<p data-line="6"><strong>Parent:</strong> super class or base class</p>
+<pre class="code CodeMirror" data-line="7">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span></span>
-        <code class="java">public class Ex {
-  public static void main(String args[]) {
-    int jan;
-    jan = 30 + 1;
-    System.out.print(&quot;Jan has &quot; + jan + &quot; days&quot;);
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span></span>
+        <code class="java">public class Parent {
+ //Blah blah blah
+}
+</code>
+      </pre><ul>
+<li data-line="12">Can’t access the methods/data from child class (private or public)</li>
+</ul>
+<p data-line="14"><strong>Child:</strong> sub class that “extends” super class</p>
+<pre class="code CodeMirror" data-line="15">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span></span>
+        <code class="java">public class Child extends Parent {
+  //blah blah blah
+}
+</code>
+      </pre><ul>
+<li data-line="20">Can access public data/methods of parent</li>
+<li data-line="21">Can’t access private data/methods of parent
+<ul>
+<li data-line="22">Gets private data, but can’t access it</li>
+</ul>
+</li>
+<li data-line="23"><strong>Protected:</strong> can access from the child classes and same package</li>
+<li data-line="24">Can call parent methods without qualification, like they are from child class (Instance data)</li>
+</ul>
+<hr />
+<h3 id="Example-of-Parent-and-Child" data-line="28">Example of Parent and Child</h3>
+<pre class="code CodeMirror" data-line="30">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
+        <code class="java">public class Vehicle {
+  protected int wheels;
+  protected void go()
+}
+</code>
+      </pre><pre class="code CodeMirror" data-line="36">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span></span>
+        <code class="java">public class Car extends Vehicle {
+  private void drive() {
+  int x = wheels;
+  go();
   }
 }
 </code>
       </pre><hr />
-<h2 id="Identifiers" data-line="16">Identifiers</h2>
+<h2 id="Super" data-line="46">Super</h2>
+<p data-line="47"><strong>super:</strong> access to parents members (“this()” for parent class)</p>
 <ul>
-<li data-line="17"><strong>Identifier:</strong> a string of characters used as a name for a class method or a variable.</li>
-<li data-line="18">Can contain letters, digits, and the underscore symbol.
+<li data-line="48">Common use: To invoke a parent’s constructor
 <ul>
-<li data-line="19">May not start with digit (always start with letter)</li>
+<li data-line="49">Can use constructors with private parameters /data</li>
 </ul>
 </li>
-<li data-line="20">Case sensitive (This != this)</li>
-<li data-line="21">Types
+<li data-line="50">super() will be inserted if is not stated
 <ul>
-<li data-line="22">Programmer defined</li>
-<li data-line="23">“Other” programmer defined (API)
-<ul>
-<li data-line="24">Modifiable</li>
+<li data-line="51">has to be first (just as this())</li>
 </ul>
 </li>
-</ul>
-</li>
-<li data-line="25">Reserved and keywords
+<li data-line="52">Constructors are finished from “Top to bottom”
 <ul>
-<li data-line="26">Can’t use as an identifier</li>
-<li data-line="27">Reserved: const, goto, etc.</li>
-<li data-line="28">Keywords: class, public, if, etc.</li>
+<li data-line="53">Parent class constructors are finished first</li>
 </ul>
 </li>
 </ul>
 <hr />
-<h2 id="Variable-Declaration" data-line="31">Variable Declaration</h2>
-<ul>
-<li data-line="32">
-<p data-line="32"><strong>Variable:</strong> identifier that names a value</p>
-<ul>
-<li data-line="33">Type (strongly and statically typed)</li>
-<li data-line="34">Storage location</li>
-</ul>
-</li>
-<li data-line="36">
-<p data-line="36">Example:</p>
-</li>
-</ul>
-<pre class="code CodeMirror" data-line="37">
+<h3 id="Example-of-Super" data-line="57">Example of Super</h3>
+<h5 id="Parent-Class" data-line="58">Parent Class</h5>
+<pre class="code CodeMirror" data-line="59">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
-        <code class="java">int x;
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span></span>
+        <code class="java">public class Person {
+  private String name;
+
+  public Person(String name) {
+    this.name = name;
+  }
+  
+  public String getName() {
+    return name;
+  }
+}
 </code>
-      </pre><ul>
-<li data-line="40">Can be constant (can’t be changed)</li>
-</ul>
-<pre class="code CodeMirror" data-line="41">
+      </pre><h5 id="Child-Classes" data-line="72">Child Classes</h5>
+<pre class="code CodeMirror" data-line="73">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
-        <code class="java">final int MONTHS;
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
+        <code class="java">public class Student {
+  protected int year;
+  
+  public Student(String name, int year) {
+    super(name) //Can get the data, using getName()
+    this.year = year;
+  }
+  
+  public Student(String name) {
+    this(name, -1); //Can use Constructor chaining
+  }
+}
 </code>
-      </pre><hr />
-<h2 id="Assignment-Statements" data-line="45">Assignment Statements</h2>
-<ul>
-<li data-line="46"><strong>I-value:</strong> Left side of the =
-<ul>
-<li data-line="47">Must be a varible identifier</li>
-</ul>
-</li>
-<li data-line="48">Right side must be an expression</li>
-<li data-line="49">Variables are expressions</li>
-<li data-line="50">“=” is the assignment operator</li>
-<li data-line="51">Assignment of values to variables must be type compatible at compile time</li>
-<li data-line="52">Example:</li>
-</ul>
-<pre class="code CodeMirror" data-line="53">
+      </pre><pre class="code CodeMirror" data-line="88">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
-        <code class="java">int x;
-x = 5 + 7;
-// OR
-int y = x;
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span></span>
+        <code class="java">public class Dentist extends Person {
+  protected string degree;
+  
+  public Dentist(String name) {
+    /*If not explixitaly stated in the first line of constructor,
+    Java will insert super().
+    Exception: If you have a chained call to another
+    constructor in same class
+    */
+    super(name);
+    degree = &quot;DDS&quot;;
+  }
+}
 </code>
-      </pre><hr />
-<h2 id="Primitive-Types" data-line="60">Primitive Types</h2>
-<p data-line="61"><strong>Integers:</strong> byte (8-bit), short (16-bit), int (32-bit), long (64-bit)<br />
-<strong>Floats:</strong> float (32-bit), double (64-bit)<br />
-<strong>Characters:</strong> char (16-bit)<br />
-—&gt; Java uses Unicode<br />
-—&gt; Single quotes</p>
-<p data-line="67"><strong>Booleans:</strong> true or false</p>
-<hr />
-</body>
+      </pre></body>
               </html>
