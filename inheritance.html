@@ -584,7 +584,7 @@ html .admonition>:last-child {
 }
 .admonition.danger>.admonition-title:before {
   color: #c2185b;
-  content: "Test";
+  content: "block";
 }
 .admonition.caution {
   border-left-color: #ffa726;
@@ -1279,7 +1279,7 @@ body p {
   public Person(String name) {
     this.name = name;
   }
-
+  
   public String getName() {
     return name;
   }
@@ -1291,12 +1291,12 @@ body p {
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
         <code class="java">public class Student {
   protected int year;
-
+  
   public Student(String name, int year) {
     super(name) //Can get the data, using getName()
     this.year = year;
   }
-
+  
   public Student(String name) {
     this(name, -1); //Can use Constructor chaining
   }
@@ -1307,7 +1307,7 @@ body p {
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span></span>
         <code class="java">public class Dentist extends Person {
   protected string degree;
-
+  
   public Dentist(String name) {
     super(name);
     /*If not explixitaly stated in the first line of constructor,
@@ -1344,11 +1344,11 @@ body p {
         <code class="java">public class Person {
 
     protected String name;
-
+    
     public Person(String n) {
         this.name = n;
     }
-
+    
     public String toString() {
         return &quot;Hello, my name is &quot; + name;
     }
@@ -1359,16 +1359,16 @@ body p {
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span></span>
         <code class="java">public class Student extends Person {
     protected int yr;
-
+    
     public Student(String name, int year) {
         super(name);
         this.yr = year;
     }
-
+    
     public Student(String name) {
         this(name, -1);
     }
-
+    
     @Override
     public String toString() {
         return &quot;Yo, my name is &quot; + name;
