@@ -1062,57 +1062,62 @@ body p {
 </li>
 <li data-line="22"><a href="#Object-Class">Object Class</a>
 <ul>
-<li data-line="23"><a href="#Example-of-Overriding-Object-Class">Example of Overriding Object Class</a></li>
+<li data-line="23"><a href="#Example-of-Overriding-Object-Class">Example of Overriding Object Class</a>
+<ul>
+<li data-line="24"><a href="#equals">equals()</a></li>
+<li data-line="25"><a href="#toString">toString()</a></li>
 </ul>
 </li>
-<li data-line="24"><a href="#Glossary">Glossary</a></li>
+</ul>
+</li>
+<li data-line="26"><a href="#Glossary">Glossary</a></li>
 </ul>
 
-<h2 id="Parent-Class-vs-Child-Class" data-line="28">Parent Class vs Child Class</h2>
-<h3 id="Parent-Class" data-line="29">Parent Class</h3>
+<h2 id="Parent-Class-vs-Child-Class" data-line="30">Parent Class vs Child Class</h2>
+<h3 id="Parent-Class" data-line="31">Parent Class</h3>
 <dl>
-<dt data-line="30">Parent Class</dt>
-<dd data-line="31">super class</dd>
-<dd data-line="32">base class</dd>
+<dt data-line="32">Parent Class</dt>
+<dd data-line="33">super class</dd>
+<dd data-line="34">base class</dd>
 </dl>
-<pre class="code CodeMirror" data-line="33">
+<pre class="code CodeMirror" data-line="35">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
         <code class="java">public class Parent {}
 </code>
       </pre><ul>
-<li data-line="36">Can’t access the methods/data from child class (private or public)</li>
-<li data-line="37">If not specified it extends Object class, contained in java.lang</li>
-<li data-line="38">May have many subclasses (Child classes)</li>
+<li data-line="38">Can’t access the methods/data from child class (private or public)</li>
+<li data-line="39">If not specified it extends Object class, contained in java.lang</li>
+<li data-line="40">May have many subclasses (Child classes)</li>
 </ul>
-<h3 id="Child-Class" data-line="41">Child Class</h3>
+<h3 id="Child-Class" data-line="43">Child Class</h3>
 <dl>
-<dt data-line="42">Child Class</dt>
-<dd data-line="43">class that “extends” a super class</dd>
-<dd data-line="44">sub class</dd>
-<dd data-line="45">derived class</dd>
+<dt data-line="44">Child Class</dt>
+<dd data-line="45">class that “extends” a super class</dd>
+<dd data-line="46">sub class</dd>
+<dd data-line="47">derived class</dd>
 </dl>
-<pre class="code CodeMirror" data-line="47">
+<pre class="code CodeMirror" data-line="49">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
         <code class="java">public class Child extends Parent {}
 </code>
       </pre><ul>
-<li data-line="50">
-<p data-line="50">Child class can only extend one Parent class</p>
-</li>
-<li data-line="51">
-<p data-line="51">Subclasses inherit the interface and implementation of their superclass</p>
-</li>
 <li data-line="52">
-<p data-line="52">Can access public data/methods of parent</p>
+<p data-line="52">Child class can only extend one Parent class</p>
 </li>
 <li data-line="53">
-<p data-line="53">Contains parents private data/methods, even though it can’t call it</p>
-<ul>
+<p data-line="53">Subclasses inherit the interface and implementation of their superclass</p>
+</li>
 <li data-line="54">
-<p data-line="54">May “get” or set private data using public methods</p>
-<pre class="code CodeMirror" data-line="56">
+<p data-line="54">Can access public data/methods of parent</p>
+</li>
+<li data-line="55">
+<p data-line="55">Contains parents private data/methods, even though it can’t call it</p>
+<ul>
+<li data-line="56">
+<p data-line="56">May “get” or set private data using public methods</p>
+<pre class="code CodeMirror" data-line="58">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span></span>
         <code class="java">public String getName()
@@ -1121,32 +1126,32 @@ body p {
       </pre></li>
 </ul>
 </li>
-<li data-line="61">
-<p data-line="61">Can call parent methods without qualification, like they are from child class (Instance data)</p>
+<li data-line="63">
+<p data-line="63">Can call parent methods without qualification, like they are from child class (Instance data)</p>
 </li>
-<li data-line="62">
-<p data-line="62">Child classes follow an <strong>is-a</strong> relationship</p>
+<li data-line="64">
+<p data-line="64">Child classes follow an <strong>is-a</strong> relationship</p>
 <ul>
-<li data-line="63">A human is-a Mammal</li>
+<li data-line="65">A human is-a Mammal</li>
 </ul>
 </li>
-<li data-line="65">
-<p data-line="65">The subclass can also:</p>
+<li data-line="67">
+<p data-line="67">The subclass can also:</p>
 <ul>
-<li data-line="66">Hide
+<li data-line="68">Hide
 <ul>
-<li data-line="67">(write a new methods/variables with the same name/signature)</li>
+<li data-line="69">(write a new methods/variables with the same name/signature)</li>
 </ul>
 </li>
-<li data-line="68">Overload</li>
-<li data-line="69">Override</li>
+<li data-line="70">Overload</li>
+<li data-line="71">Override</li>
 </ul>
 </li>
 </ul>
 <hr />
-<h3 id="Example-of-Parent-and-Child" data-line="73">Example of Parent and Child</h3>
-<h5 id="Parent-Class-1" data-line="74">Parent Class</h5>
-<pre class="code CodeMirror" data-line="76">
+<h3 id="Example-of-Parent-and-Child" data-line="75">Example of Parent and Child</h3>
+<h5 id="Parent-Class-1" data-line="76">Parent Class</h5>
+<pre class="code CodeMirror" data-line="78">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
         <code class="java">public class Vehicle {
@@ -1154,8 +1159,8 @@ body p {
   protected void go()
 }
 </code>
-      </pre><h5 id="Child-Class-1" data-line="83">Child Class</h5>
-<pre class="code CodeMirror" data-line="85">
+      </pre><h5 id="Child-Class-1" data-line="85">Child Class</h5>
+<pre class="code CodeMirror" data-line="87">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span></span>
         <code class="java">public class Car extends Vehicle {
@@ -1166,8 +1171,8 @@ body p {
 }
 </code>
       </pre><hr />
-<h2 id="Access-Modifiers" data-line="96">Access Modifiers</h2>
-<table data-line="99">
+<h2 id="Access-Modifiers" data-line="98">Access Modifiers</h2>
+<table data-line="101">
 <thead>
 <tr>
 <th>Modifier</th>
@@ -1208,22 +1213,22 @@ body p {
 </tr>
 </tbody>
 </table>
-<blockquote data-line="105">
-<p data-line="105">The default (no) modifier is also called “package private.”</p>
+<blockquote data-line="107">
+<p data-line="107">The default (no) modifier is also called “package private.”</p>
 </blockquote>
 <hr />
-<h2 id="Super" data-line="109">Super</h2>
+<h2 id="Super" data-line="111">Super</h2>
 <dl>
-<dt data-line="111">super</dt>
-<dd data-line="112">access to parents members</dd>
-<dd data-line="113">“this()” for parent class</dd>
+<dt data-line="113">super</dt>
+<dd data-line="114">access to parents members</dd>
+<dd data-line="115">“this()” for parent class</dd>
 </dl>
 <ul>
-<li data-line="115">Common use: To invoke a parent’s constructor
+<li data-line="117">Common use: To invoke a parent’s constructor
 <ul>
-<li data-line="116">Has to be first</li>
-<li data-line="117">Can use constructors with private parameters/data</li>
-<li data-line="118">Example:<pre class="code CodeMirror" data-line="119">
+<li data-line="118">Has to be first</li>
+<li data-line="119">Can use constructors with private parameters/data</li>
+<li data-line="120">Example:<pre class="code CodeMirror" data-line="121">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
         <code class="java">super(instanceVariable)
@@ -1231,9 +1236,9 @@ body p {
       </pre></li>
 </ul>
 </li>
-<li data-line="122">Can be used to invoke parent methods via dot-access
+<li data-line="124">Can be used to invoke parent methods via dot-access
 <ul>
-<li data-line="123">Example:<pre class="code CodeMirror" data-line="124">
+<li data-line="125">Example:<pre class="code CodeMirror" data-line="126">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
         <code class="java">super.parentMethod();
@@ -1241,9 +1246,9 @@ body p {
       </pre></li>
 </ul>
 </li>
-<li data-line="127">Can be used to access immediate parent class instance variable
+<li data-line="129">Can be used to access immediate parent class instance variable
 <ul>
-<li data-line="128">Example<pre class="code CodeMirror" data-line="129">
+<li data-line="130">Example<pre class="code CodeMirror" data-line="131">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
         <code class="java">super.parentInstanceVariable
@@ -1251,21 +1256,21 @@ body p {
       </pre></li>
 </ul>
 </li>
-<li data-line="132">super() will be inserted if is not stated
+<li data-line="134">super() will be inserted if is not stated
 <ul>
-<li data-line="133">If a super class doesn’t include a no-args, then the subclass constructors must include a super call</li>
+<li data-line="135">If a super class doesn’t include a no-args, then the subclass constructors must include a super call</li>
 </ul>
 </li>
-<li data-line="134">Constructors are finished from “Top to bottom”
+<li data-line="136">Constructors are finished from “Top to bottom”
 <ul>
-<li data-line="135">Parent class constructors are finished first</li>
+<li data-line="137">Parent class constructors are finished first</li>
 </ul>
 </li>
 </ul>
 <hr />
-<h3 id="Example-of-Super" data-line="140">Example of Super</h3>
-<h5 id="Superclass" data-line="142">Superclass</h5>
-<pre class="code CodeMirror" data-line="144">
+<h3 id="Example-of-Super" data-line="142">Example of Super</h3>
+<h5 id="Superclass" data-line="144">Superclass</h5>
+<pre class="code CodeMirror" data-line="146">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span></span>
         <code class="java">public class Person {
@@ -1280,8 +1285,8 @@ body p {
   }
 }
 </code>
-      </pre><h5 id="Subclasses" data-line="159">Subclasses</h5>
-<pre class="code CodeMirror" data-line="161">
+      </pre><h5 id="Subclasses" data-line="161">Subclasses</h5>
+<pre class="code CodeMirror" data-line="163">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
         <code class="java">public class Student {
@@ -1297,7 +1302,7 @@ body p {
   }
 }
 </code>
-      </pre><pre class="code CodeMirror" data-line="176">
+      </pre><pre class="code CodeMirror" data-line="178">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span></span>
         <code class="java">public class Dentist extends Person {
@@ -1315,25 +1320,25 @@ body p {
 }
 </code>
       </pre><hr />
-<h2 id="Override" data-line="192">Override</h2>
+<h2 id="Override" data-line="194">Override</h2>
 <dl>
-<dt data-line="193">Override</dt>
-<dd data-line="194">provide a new implementation for a method in the subclass.</dd>
+<dt data-line="195">Override</dt>
+<dd data-line="196">provide a new implementation for a method in the subclass.</dd>
 </dl>
 <ul>
-<li data-line="196">Overriding allows two objects related by inheritance to use the same naming convention for the methods that accomplish the same task different ways</li>
-<li data-line="197">Static methods can be inherited, but not overridden (simple hides the superclass’ method)</li>
-<li data-line="198">When a child class defines a method with the same signature as the parent, the child’s version overrides the parent.</li>
-<li data-line="199">@Override annotation before the method signature</li>
+<li data-line="198">Overriding allows two objects related by inheritance to use the same naming convention for the methods that accomplish the same task different ways</li>
+<li data-line="199">Static methods can be inherited, but not overridden (simple hides the superclass’ method)</li>
+<li data-line="200">When a child class defines a method with the same signature as the parent, the child’s version overrides the parent.</li>
+<li data-line="201">@Override annotation before the method signature</li>
 </ul>
 <div class="admonition danger">
 <p class="admonition-title">Don’t Override Instance Variables</p>
-<p data-line="201">Child class already has the variable, which can lead to problems</p>
+<p data-line="203">Child class already has the variable, which can lead to problems</p>
 </div>
 <hr />
-<h3 id="Override-Example" data-line="205">Override Example</h3>
-<h4 id="Superclass-1" data-line="206">Superclass</h4>
-<pre class="code CodeMirror" data-line="207">
+<h3 id="Override-Example" data-line="207">Override Example</h3>
+<h4 id="Superclass-1" data-line="208">Superclass</h4>
+<pre class="code CodeMirror" data-line="209">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
         <code class="java">public class Person {
@@ -1349,8 +1354,8 @@ body p {
     }
 
 </code>
-      </pre><h4 id="Subclass" data-line="221">Subclass</h4>
-<pre class="code CodeMirror" data-line="222">
+      </pre><h4 id="Subclass" data-line="223">Subclass</h4>
+<pre class="code CodeMirror" data-line="224">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span></span>
         <code class="java">public class Student extends Person {
@@ -1371,32 +1376,31 @@ body p {
     }
     
 </code>
-      </pre><h2 id="Object-Class" data-line="242">Object Class</h2>
+      </pre><h2 id="Object-Class" data-line="244">Object Class</h2>
 <dl>
-<dt data-line="243">Object Class</dt>
-<dd data-line="244">Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.</dd>
+<dt data-line="245">Object Class</dt>
+<dd data-line="246">Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.</dd>
 </dl>
 <ul>
-<li data-line="247">The Object class contains:
+<li data-line="249">The Object class contains:
 <ul>
-<li data-line="248">equals()</li>
-<li data-line="249">toString()</li>
-<li data-line="250">clone()</li>
-<li data-line="251"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Other Methods</a></li>
+<li data-line="250">equals()</li>
+<li data-line="251">toString()</li>
+<li data-line="252">clone()</li>
+<li data-line="253"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Other Methods</a></li>
 </ul>
 </li>
-<li data-line="252">Overriding equals()
+<li data-line="254">Overriding equals()
 <ul>
-<li data-line="253">Check if object is not null</li>
-<li data-line="254">Check for reference equality (==)</li>
-<li data-line="255">Check if the other object is <em>instanceof</em> class</li>
-<li data-line="256">Cast other object to intended class (guaranteed to work after <em>instanceof</em> check)</li>
-<li data-line="257"></li>
+<li data-line="255">Check if object is not null</li>
+<li data-line="256">Check for reference equality (==)</li>
+<li data-line="257">Check if the other object is <em>instanceof</em> class</li>
+<li data-line="258">Cast other object to intended class (guaranteed to work after <em>instanceof</em> check)</li>
 </ul>
 </li>
 </ul>
-<h3 id="Example-of-Overriding-Object-Class" data-line="259">Example of Overriding Object Class</h3>
-<pre class="code CodeMirror" data-line="260">
+<h3 id="Example-of-Overriding-Object-Class" data-line="261">Example of Overriding Object Class</h3>
+<pre class="code CodeMirror" data-line="262">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span></span>
         <code class="java">public class GrizzlyBear {
@@ -1406,8 +1410,8 @@ body p {
         this.name = name;
     }
 </code>
-      </pre><h4 id="equals" data-line="269">equals()</h4>
-<pre class="code CodeMirror" data-line="270">
+      </pre><h4 id="equals" data-line="271">equals()</h4>
+<pre class="code CodeMirror" data-line="272">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
         <code class="java">  @Override
@@ -1423,8 +1427,8 @@ public boolean equals(Object other) {
     GrizzlyBear that = (GrizzlyBear) other;
     return this.name.equals(that);
 </code>
-      </pre><h4 id="toString" data-line="285">toString()</h4>
-<pre class="code CodeMirror" data-line="286">
+      </pre><h4 id="toString" data-line="287">toString()</h4>
+<pre class="code CodeMirror" data-line="288">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
         <code class="java">    @Override
@@ -1433,19 +1437,19 @@ public boolean equals(Object other) {
     }
 </code>
       </pre><hr />
-<h2 id="Glossary" data-line="294">Glossary</h2>
+<h2 id="Glossary" data-line="296">Glossary</h2>
 <dl>
-<dt data-line="296">Child Class</dt>
-<dd data-line="297">class that “extends” a super class</dd>
-<dd data-line="298">sub class</dd>
-<dd data-line="299">derived class</dd>
-<dt data-line="301">Inheritance</dt>
-<dd data-line="302">process of deriving a new class from an existing one.</dd>
-<dt data-line="304">Parent Class</dt>
-<dd data-line="305">super class</dd>
-<dd data-line="306">base class</dd>
-<dt data-line="308">super</dt>
-<dd data-line="309">access to parents members (“this()” for parent class)</dd>
+<dt data-line="298">Child Class</dt>
+<dd data-line="299">class that “extends” a super class</dd>
+<dd data-line="300">sub class</dd>
+<dd data-line="301">derived class</dd>
+<dt data-line="303">Inheritance</dt>
+<dd data-line="304">process of deriving a new class from an existing one.</dd>
+<dt data-line="306">Parent Class</dt>
+<dd data-line="307">super class</dd>
+<dd data-line="308">base class</dd>
+<dt data-line="310">super</dt>
+<dd data-line="311">access to parents members (“this()” for parent class)</dd>
 </dl>
 </body>
               </html>
