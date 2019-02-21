@@ -1096,13 +1096,12 @@ body p {
 <li data-line="69">Check for reference equality (==)</li>
 <li data-line="70">Check if the other object is <em>instanceof</em> class</li>
 <li data-line="71">Cast other object to intended class (guaranteed to work after <em>instanceof</em> check)</li>
-<li data-line="72">Check that each “significant” field in the other object<br />
-equals(Object) the corresponding field in this object.</li>
+<li data-line="72">Check that each “significant” field in the other object equals(Object) the corresponding field in this object.</li>
 </ul>
 </li>
 </ul>
-<h3 id="Example-of-Overriding-Object-Class" data-line="76">Example of Overriding Object Class</h3>
-<pre class="code CodeMirror" data-line="77">
+<h3 id="Example-of-Overriding-Object-Class" data-line="75">Example of Overriding Object Class</h3>
+<pre class="code CodeMirror" data-line="76">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span></span>
         <code class="java">public class GrizzlyBear {
@@ -1112,8 +1111,8 @@ equals(Object) the corresponding field in this object.</li>
         this.name = name;
     }
 </code>
-      </pre><h4 id="equals" data-line="86">equals()</h4>
-<pre class="code CodeMirror" data-line="87">
+      </pre><h4 id="equals" data-line="85">equals()</h4>
+<pre class="code CodeMirror" data-line="86">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
         <code class="java">  @Override
@@ -1129,8 +1128,8 @@ public boolean equals(Object other) {
     GrizzlyBear that = (GrizzlyBear) other;
     return this.name.equals(that.name);
 </code>
-      </pre><h4 id="toString" data-line="102">toString()</h4>
-<pre class="code CodeMirror" data-line="103">
+      </pre><h4 id="toString" data-line="101">toString()</h4>
+<pre class="code CodeMirror" data-line="102">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
         <code class="java">    @Override
@@ -1139,8 +1138,8 @@ public boolean equals(Object other) {
     }
 </code>
       </pre><hr />
-<h3 id="Example-of-equals-with-subclasses" data-line="110">Example of equals() with subclasses</h3>
-<pre class="code CodeMirror" data-line="111">
+<h3 id="Example-of-equals-with-subclasses" data-line="109">Example of equals() with subclasses</h3>
+<pre class="code CodeMirror" data-line="110">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span></span>
         <code class="java">public class CanadianGrizzlyBear extends GrizzlyBear {
@@ -1166,12 +1165,12 @@ public boolean equals(Object other) {
 }
 </code>
       </pre><hr />
-<h2 id="Glossary" data-line="135">Glossary</h2>
+<h2 id="Glossary" data-line="134">Glossary</h2>
 <dl>
-<dt data-line="137">Override</dt>
-<dd data-line="138">provide a new implementation for a method in the subclass.</dd>
-<dt data-line="140">Object Class</dt>
-<dd data-line="141">Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.</dd>
+<dt data-line="136">Override</dt>
+<dd data-line="137">provide a new implementation for a method in the subclass.</dd>
+<dt data-line="139">Object Class</dt>
+<dd data-line="140">Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.</dd>
 </dl>
 </body>
               </html>
