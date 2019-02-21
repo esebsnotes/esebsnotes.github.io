@@ -1020,304 +1020,129 @@ body p {
 </style>
                    <link rel="stylesheet" href="css/dracula.css"><link rel="stylesheet" href="css/katex.min.css"><link rel="stylesheet" href="css/codemirror.css"><link rel="stylesheet" href="css/main.min.css">
                  </head>
-                 <body><h1 id="Inheritance" data-line="0">Inheritance</h1>
+                 <body><h1 id="Overriding-and-Object" data-line="0">Overriding and Object</h1>
+<h2 id="Override" data-line="2">Override</h2>
 <dl>
-<dt data-line="1">Inheritance</dt>
-<dd data-line="2">process of deriving a new class from an existing one.</dd>
+<dt data-line="4">Override</dt>
+<dd data-line="5">provide a new implementation for a method in the subclass.</dd>
 </dl>
-
 <ul>
-<li data-line="7"><a href="#Parent-Class-vs-Child-Class">Parent Class vs Child Class</a>
-<ul>
-<li data-line="8"><a href="#Parent-Class">Parent Class</a></li>
-<li data-line="9"><a href="#Child-Class">Child Class</a></li>
-<li data-line="10"><a href="#Example-of-Parent-and-Child">Example of Parent and Child</a>
-<ul>
-<li data-line="11"><a href="#Parent-Class-1">Parent Class</a></li>
-<li data-line="12"><a href="#Child-Class-1">Child Class</a></li>
+<li data-line="7">Overriding allows two objects related by inheritance to use the same naming convention for the methods that accomplish the same task different ways</li>
+<li data-line="8">Static methods can be inherited, but not overridden (simple hides the superclass’ method)</li>
+<li data-line="9">When a child class defines a method with the same signature as the parent, the child’s version overrides the parent.</li>
+<li data-line="10">@Override annotation before the method signature</li>
 </ul>
-</li>
-</ul>
-</li>
-<li data-line="13"><a href="#Access-Modifiers">Access Modifiers</a></li>
-<li data-line="14"><a href="#Super">Super</a>
-<ul>
-<li data-line="15"><a href="#Example-of-Super">Example of Super</a>
-<ul>
-<li data-line="16"><a href="#Superclass">Superclass</a></li>
-<li data-line="17"><a href="#Subclasses">Subclasses</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li data-line="18"><a href="#Glossary">Glossary</a></li>
-</ul>
-
-<h2 id="Parent-Class-vs-Child-Class" data-line="22">Parent Class vs Child Class</h2>
-<h3 id="Parent-Class" data-line="23">Parent Class</h3>
-<dl>
-<dt data-line="24">Parent Class</dt>
-<dd data-line="25">super class</dd>
-<dd data-line="26">base class</dd>
-</dl>
-<pre class="code CodeMirror" data-line="27">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
-        <code class="java">public class Parent {}
-</code>
-      </pre><ul>
-<li data-line="30">Can’t access the methods/data from child class (private or public)</li>
-<li data-line="31">If not specified it extends Object class, contained in java.lang</li>
-<li data-line="32">May have many subclasses (Child classes)</li>
-</ul>
-<h3 id="Child-Class" data-line="35">Child Class</h3>
-<dl>
-<dt data-line="36">Child Class</dt>
-<dd data-line="37">class that “extends” a super class</dd>
-<dd data-line="38">sub class</dd>
-<dd data-line="39">derived class</dd>
-<dt data-line="41">Single inheritance</dt>
-<dd data-line="42">a single class cannot extend multiple parents, however there can be a chain</dd>
-</dl>
-<pre class="code CodeMirror" data-line="44">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
-        <code class="java">public class Child extends Parent {}
-</code>
-      </pre><ul>
-<li data-line="47">
-<p data-line="47">Child class can only extend one Parent class (Single inheritance)</p>
-</li>
-<li data-line="48">
-<p data-line="48">Subclasses inherit the interface and implementation of their superclass</p>
-</li>
-<li data-line="49">
-<p data-line="49">Can access public data/methods of parent</p>
-</li>
-<li data-line="50">
-<p data-line="50">Contains parents private data/methods, even though it can’t call it</p>
-<ul>
-<li data-line="51">
-<p data-line="51">May “get” or set private data using public methods</p>
-<pre class="code CodeMirror" data-line="53">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span></span>
-        <code class="java">public String getName()
- return name;
-</code>
-      </pre></li>
-</ul>
-</li>
-<li data-line="58">
-<p data-line="58">Can call parent methods without qualification, like they are from child class (Instance data)</p>
-</li>
-<li data-line="59">
-<p data-line="59">Child classes follow an <strong>is-a</strong> relationship (hierarchy)</p>
-<ul>
-<li data-line="60">A human is-a Mammal</li>
-</ul>
-</li>
-<li data-line="62">
-<p data-line="62">The subclass can also:</p>
-<ul>
-<li data-line="63">Hide
-<ul>
-<li data-line="64">(write a new methods/variables with the same name/signature)</li>
-</ul>
-</li>
-<li data-line="65">Overload</li>
-<li data-line="66">Override</li>
-</ul>
-</li>
-</ul>
+<div class="admonition caution">
+<p class="admonition-title">Don’t Override Instance Variables </p>
+<p data-line="13">Child class already has the variable, which can lead to problems</p>
+</div>
 <hr />
-<h3 id="Example-of-Parent-and-Child" data-line="70">Example of Parent and Child</h3>
-<h5 id="Parent-Class-1" data-line="71">Parent Class</h5>
-<pre class="code CodeMirror" data-line="73">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
-        <code class="java">public class Vehicle {
-  protected int wheels;
-  protected void go()
-}
-</code>
-      </pre><h5 id="Child-Class-1" data-line="80">Child Class</h5>
-<pre class="code CodeMirror" data-line="82">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span></span>
-        <code class="java">public class Car extends Vehicle {
-  private void drive() {
-    int x = wheels;
-    go();
-  }
-}
-</code>
-      </pre><hr />
-<h2 id="Access-Modifiers" data-line="93">Access Modifiers</h2>
-<table data-line="96">
-<thead>
-<tr>
-<th>Modifier</th>
-<th style="text-align:center">Class</th>
-<th style="text-align:center">Package</th>
-<th style="text-align:center">Subclass</th>
-<th style="text-align:center">World</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>public</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-</tr>
-<tr>
-<td>protected</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">N</td>
-</tr>
-<tr>
-<td>default</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">N</td>
-<td style="text-align:center">N</td>
-</tr>
-<tr>
-<td>private</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">N</td>
-<td style="text-align:center">N</td>
-<td style="text-align:center">N</td>
-</tr>
-</tbody>
-</table>
-<blockquote data-line="102">
-<p data-line="102">The default (no) modifier is also called “package private.”</p>
-</blockquote>
-<hr />
-<h2 id="Super" data-line="106">Super</h2>
-<dl>
-<dt data-line="108">super</dt>
-<dd data-line="109">access to parents members</dd>
-<dd data-line="110">“this()” for parent class</dd>
-</dl>
-<ul>
-<li data-line="112">Common use: To invoke a parent’s constructor
-<ul>
-<li data-line="113">Has to be first</li>
-<li data-line="114">Can use constructors with private parameters/data</li>
-<li data-line="115">Example:<pre class="code CodeMirror" data-line="116">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
-        <code class="java">super(instanceVariable)
-</code>
-      </pre></li>
-</ul>
-</li>
-<li data-line="119">Can be used to invoke parent methods via dot-access
-<ul>
-<li data-line="120">Example:<pre class="code CodeMirror" data-line="121">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
-        <code class="java">super.parentMethod();
-</code>
-      </pre></li>
-</ul>
-</li>
-<li data-line="124">Can be used to access immediate parent class instance variable
-<ul>
-<li data-line="125">Example<pre class="code CodeMirror" data-line="126">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
-        <code class="java">super.parentInstanceVariable
-</code>
-      </pre></li>
-</ul>
-</li>
-<li data-line="129">super() will be inserted if is not stated
-<ul>
-<li data-line="130">If a super class doesn’t include a no-args, then the subclass constructors must include a super call</li>
-</ul>
-</li>
-<li data-line="131">Constructors are finished from “Top to bottom”
-<ul>
-<li data-line="132">Parent class constructors are finished first</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h3 id="Example-of-Super" data-line="137">Example of Super</h3>
-<h5 id="Superclass" data-line="139">Superclass</h5>
-<pre class="code CodeMirror" data-line="141">
+<h3 id="Override-Example" data-line="17">Override Example</h3>
+<h4 id="Superclass" data-line="19">Superclass</h4>
+<pre class="code CodeMirror" data-line="21">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span></span>
         <code class="java">public class Person {
-  private String name;
 
-  public Person(String name) {
-    this.name = name;
-  }
-  
-  public String getName() {
-    return name;
-  }
-}
+    protected String name;
+    
+    public Person(String n) {
+        this.name = n;
+    }
+    
+    public String toString() {
+        return &quot;Hello, my name is &quot; + name;
+    }
 </code>
-      </pre><h5 id="Subclasses" data-line="155">Subclasses</h5>
-<pre class="code CodeMirror" data-line="157">
+      </pre><h4 id="Subclass" data-line="34">Subclass</h4>
+<pre class="code CodeMirror" data-line="36">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
-        <code class="java">public class Student {
-  protected int year;
-  
-  public Student(String name, int year) {
-    super(name) //Can get the data, using getName()
-    this.year = year;
-  }
-  
-  public Student(String name) {
-    this(name, -1); //Can use Constructor chaining
-  }
-}
-</code>
-      </pre><pre class="code CodeMirror" data-line="172">
-        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span></span>
-        <code class="java">public class Dentist extends Person {
-  protected string degree;
-  
-  public Dentist(String name) {
-    super(name);
-    /*If not explixitaly stated in the first line of constructor,
-    Java will insert super().
-    Exception: If you have a chained call to another
-    constructor in same class
-    */
-    degree = &quot;DDS&quot;;
-  }
-}
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span></span>
+        <code class="java">public class Student extends Person {
+    protected int yr;
+    
+    public Student(String name, int year) {
+        super(name);
+        this.yr = year;
+    }
+    
+    public Student(String name) {
+        this(name, -1);
+    }
+    
+    @Override
+    public String toString() {
+        return &quot;Yo, my name is &quot; + name;
+    }
 </code>
       </pre><hr />
-<h2 id="Glossary" data-line="190">Glossary</h2>
+<h2 id="Object-Class" data-line="57">Object Class</h2>
 <dl>
-<dt data-line="192">Child Class</dt>
-<dd data-line="193">class that “extends” a super class</dd>
-<dd data-line="194">sub class</dd>
-<dd data-line="195">derived class</dd>
-<dt data-line="197">Inheritance</dt>
-<dd data-line="198">process of deriving a new class from an existing one.</dd>
-<dt data-line="201">Parent Class</dt>
-<dd data-line="202">super class</dd>
-<dd data-line="203">base class</dd>
-<dt data-line="205">Single inheritance</dt>
-<dd data-line="206">a single class cannot extend multiple parents, however there can be a chain</dd>
-<dt data-line="208">super</dt>
-<dd data-line="209">access to parents members</dd>
-<dd data-line="210">“this()” for parent class</dd>
+<dt data-line="58">Object Class</dt>
+<dd data-line="59">Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.</dd>
+</dl>
+<ul>
+<li data-line="62">The Object class contains:
+<ul>
+<li data-line="63">equals()</li>
+<li data-line="64">toString()</li>
+<li data-line="65">clone()</li>
+<li data-line="66"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Other Methods</a></li>
+</ul>
+</li>
+<li data-line="67">Overriding equals()
+<ul>
+<li data-line="68">Check if object is not null</li>
+<li data-line="69">Check for reference equality (==)</li>
+<li data-line="70">Check if the other object is <em>instanceof</em> class</li>
+<li data-line="71">Cast other object to intended class (guaranteed to work after <em>instanceof</em> check)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Example-of-Overriding-Object-Class" data-line="74">Example of Overriding Object Class</h3>
+<pre class="code CodeMirror" data-line="75">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span></span>
+        <code class="java">public class GrizzlyBear {
+    protected String name;
+
+    public GrizzlyBear(String name) {
+        this.name = name;
+    }
+</code>
+      </pre><h4 id="equals" data-line="84">equals()</h4>
+<pre class="code CodeMirror" data-line="85">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
+        <code class="java">  @Override
+public boolean equals(Object other) {
+    if (null == other) {
+      return false; }
+    if (this == other) {
+      return true;
+    }
+    if (!(other instanceof GrizzlyBear)) {
+      return false;
+    }
+    GrizzlyBear that = (GrizzlyBear) other;
+    return this.name.equals(that);
+</code>
+      </pre><h4 id="toString" data-line="100">toString()</h4>
+<pre class="code CodeMirror" data-line="101">
+        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
+        <code class="java">    @Override
+    public String toString() {
+        return name;
+    }
+</code>
+      </pre><hr />
+<h2 id="Glossary" data-line="108">Glossary</h2>
+<dl>
+<dt data-line="110">Override</dt>
+<dd data-line="111">provide a new implementation for a method in the subclass.</dd>
+<dt data-line="113">Object Class</dt>
+<dd data-line="114">Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.</dd>
 </dl>
 </body>
               </html>
