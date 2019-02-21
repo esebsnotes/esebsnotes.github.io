@@ -1021,13 +1021,19 @@ body p {
                    <link rel="stylesheet" href="css/dracula.css"><link rel="stylesheet" href="css/katex.min.css"><link rel="stylesheet" href="css/codemirror.css"><link rel="stylesheet" href="css/main.min.css">
                  </head>
                  <body><h1 id="Variables-Expressions-and-Assignments" data-line="0">Variables, Expressions, and Assignments</h1>
+
 <ul>
-<li data-line="1"><a href="#Example">Example</a></li>
-<li data-line="2"><a href="#Identifiers">Identifiers</a></li>
-<li data-line="3"><a href="#Variable-Declaration">Variable Declaration</a></li>
+<li data-line="3"><a href="#Example">Example</a></li>
+<li data-line="4"><a href="#Identifiers">Identifiers</a></li>
+<li data-line="5"><a href="#Variable-Declaration">Variable Declaration</a></li>
+<li data-line="6"><a href="#Assignment-Statements">Assignment Statements</a></li>
+<li data-line="7"><a href="#Primitive-Types">Primitive Types</a></li>
+<li data-line="8"><a href="#Conversions">Conversions</a></li>
+<li data-line="9"><a href="#Glossary">Glossary</a></li>
 </ul>
-<h2 id="Example" data-line="5">Example</h2>
-<pre class="code CodeMirror" data-line="6">
+
+<h2 id="Example" data-line="12">Example</h2>
+<pre class="code CodeMirror" data-line="13">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span></span>
         <code class="java">public class Ex {
@@ -1039,75 +1045,80 @@ body p {
 }
 </code>
       </pre><hr />
-<h2 id="Identifiers" data-line="16">Identifiers</h2>
+<h2 id="Identifiers" data-line="23">Identifiers</h2>
+<dl>
+<dt data-line="24">Identifier</dt>
+<dd data-line="25">a string of characters used as a name for a class method or a variable.</dd>
+</dl>
 <ul>
-<li data-line="17"><strong>Identifier:</strong> a string of characters used as a name for a class method or a variable.</li>
-<li data-line="18">Can contain letters, digits, and the underscore symbol.
+<li data-line="27">Can contain letters, digits, and the underscore symbol.
 <ul>
-<li data-line="19">May not start with digit (always start with letter)</li>
+<li data-line="28">May not start with digit (always start with letter)</li>
 </ul>
 </li>
-<li data-line="20">Case sensitive (This != this)</li>
-<li data-line="21">Types
+<li data-line="29">Case sensitive (This != this)</li>
+<li data-line="30">Types
 <ul>
-<li data-line="22">Programmer defined</li>
-<li data-line="23">“Other” programmer defined (API)
+<li data-line="31">Programmer defined</li>
+<li data-line="32">“Other” programmer defined (API)
 <ul>
-<li data-line="24">Modifiable</li>
+<li data-line="33">Modifiable</li>
 </ul>
 </li>
 </ul>
 </li>
-<li data-line="25">Reserved and keywords
+<li data-line="34">Reserved and keywords
 <ul>
-<li data-line="26">Can’t use as an identifier</li>
-<li data-line="27">Reserved: const, goto, etc.</li>
-<li data-line="28">Keywords: class, public, if, etc.</li>
+<li data-line="35">Can’t use as an identifier</li>
+<li data-line="36">Reserved: const, goto, etc.</li>
+<li data-line="37">Keywords: class, public, if, etc.</li>
 </ul>
 </li>
 </ul>
 <hr />
-<h2 id="Variable-Declaration" data-line="31">Variable Declaration</h2>
+<h2 id="Variable-Declaration" data-line="40">Variable Declaration</h2>
+<dl>
+<dt data-line="41">Variable</dt>
+<dd data-line="42">identifier that names a value
 <ul>
-<li data-line="32">
-<p data-line="32"><strong>Variable:</strong> identifier that names a value</p>
+<li data-line="43">Type (strongly and statically typed)</li>
+<li data-line="44">Storage location</li>
+</ul>
+</dd>
+</dl>
 <ul>
-<li data-line="33">Type (strongly and statically typed)</li>
-<li data-line="34">Storage location</li>
+<li data-line="46">Example:</li>
 </ul>
-</li>
-<li data-line="36">
-<p data-line="36">Example:</p>
-</li>
-</ul>
-<pre class="code CodeMirror" data-line="37">
+<pre class="code CodeMirror" data-line="47">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
         <code class="java">int x;
 </code>
       </pre><ul>
-<li data-line="40">Can be constant (can’t be changed)</li>
+<li data-line="50">Can be constant (can’t be changed)</li>
 </ul>
-<pre class="code CodeMirror" data-line="41">
+<pre class="code CodeMirror" data-line="51">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
         <code class="java">final int MONTHS;
 </code>
       </pre><hr />
-<h2 id="Assignment-Statements" data-line="45">Assignment Statements</h2>
+<h2 id="Assignment-Statements" data-line="55">Assignment Statements</h2>
+<dl>
+<dt data-line="56">I-value</dt>
+<dd data-line="57">Left side of the equals sign</dd>
+</dl>
+<blockquote data-line="59">
+<p data-line="59">Must be a varible identifier</p>
+</blockquote>
 <ul>
-<li data-line="46"><strong>I-value:</strong> Left side of the =
-<ul>
-<li data-line="47">Must be a varible identifier</li>
+<li data-line="60">Right side must be an expression</li>
+<li data-line="61">Variables are expressions</li>
+<li data-line="62">“=” is the assignment operator</li>
+<li data-line="63">Assignment of values to variables must be type compatible at compile time</li>
+<li data-line="64">Example:</li>
 </ul>
-</li>
-<li data-line="48">Right side must be an expression</li>
-<li data-line="49">Variables are expressions</li>
-<li data-line="50">“=” is the assignment operator</li>
-<li data-line="51">Assignment of values to variables must be type compatible at compile time</li>
-<li data-line="52">Example:</li>
-</ul>
-<pre class="code CodeMirror" data-line="53">
+<pre class="code CodeMirror" data-line="65">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
         <code class="java">int x;
@@ -1116,13 +1127,61 @@ x = 5 + 7;
 int y = x;
 </code>
       </pre><hr />
-<h2 id="Primitive-Types" data-line="60">Primitive Types</h2>
-<p data-line="61"><strong>Integers:</strong> byte (8-bit), short (16-bit), int (32-bit), long (64-bit)<br />
-<strong>Floats:</strong> float (32-bit), double (64-bit)<br />
-<strong>Characters:</strong> char (16-bit)<br />
-—&gt; Java uses Unicode<br />
-—&gt; Single quotes</p>
-<p data-line="67"><strong>Booleans:</strong> true or false</p>
+<h2 id="Primitive-Types" data-line="72">Primitive Types</h2>
+<dl>
+<dt data-line="73">Integers</dt>
+<dd data-line="74">byte (8-bit), short (16-bit), int (32-bit), long (64-bit)</dd>
+<dt data-line="75">Floats</dt>
+<dd data-line="76">float (32-bit), double (64-bit)</dd>
+<dt data-line="77">Characters</dt>
+<dd data-line="78">char (16-bit)</dd>
+</dl>
+<blockquote data-line="79">
+<p data-line="79">Java uses Unicode<br />
+Single quotes</p>
+</blockquote>
+<dl>
+<dt data-line="82">Booleans</dt>
+<dd data-line="83">true or false</dd>
+</dl>
 <hr />
+<h2 id="Conversions" data-line="87">Conversions</h2>
+<ul>
+<li data-line="89">Widening
+<ul>
+<li data-line="90">“small to large”</li>
+<li data-line="91">short —&gt; long</li>
+</ul>
+</li>
+<li data-line="92">Narrowing
+<ul>
+<li data-line="93">“large to small”</li>
+<li data-line="94">Error: Lossy</li>
+<li data-line="95">long —&gt; short</li>
+</ul>
+</li>
+</ul>
+<h2 id="Glossary" data-line="97">Glossary</h2>
+<dl>
+<dt data-line="99">Booleans</dt>
+<dd data-line="100">true or false</dd>
+<dt data-line="102">Characters</dt>
+<dd data-line="103">char (16-bit)</dd>
+<dt data-line="105">Floats</dt>
+<dd data-line="106">float (32-bit), double (64-bit)</dd>
+<dt data-line="108">Identifier</dt>
+<dd data-line="109">a string of characters used as a name for a class method or a variable.</dd>
+<dt data-line="111">Integers</dt>
+<dd data-line="112">byte (8-bit), short (16-bit), int (32-bit), long (64-bit)</dd>
+<dt data-line="114">I-value</dt>
+<dd data-line="115">Left side of the equals sign</dd>
+<dt data-line="117">Variable</dt>
+<dd data-line="118">identifier that names a value
+<ul>
+<li data-line="119">Type (strongly and statically typed)</li>
+<li data-line="120">Storage location</li>
+</ul>
+</dd>
+</dl>
 </body>
               </html>
