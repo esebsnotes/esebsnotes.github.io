@@ -1072,7 +1072,7 @@ body p {
 <h4 id="Superclass" data-line="35">Superclass</h4>
 <pre class="code CodeMirror" data-line="37">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
         <code class="java">public class Person {
 
     protected String name;
@@ -1084,11 +1084,12 @@ body p {
     public String toString() {
         return &quot;Hello, my name is &quot; + name;
     }
+}
 </code>
-      </pre><h4 id="Subclass" data-line="50">Subclass</h4>
-<pre class="code CodeMirror" data-line="52">
+      </pre><h4 id="Subclass" data-line="51">Subclass</h4>
+<pre class="code CodeMirror" data-line="53">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span></span>
         <code class="java">public class Student extends Person {
     protected int yr;
     
@@ -1105,53 +1106,55 @@ body p {
     public String toString() {
         return &quot;Yo, my name is &quot; + name;
     }
+}
 </code>
       </pre><hr />
-<h2 id="Object-Class" data-line="73">Object Class</h2>
+<h2 id="Object-Class" data-line="75">Object Class</h2>
 <dl>
-<dt data-line="74">Object Class</dt>
-<dd data-line="75">Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.</dd>
+<dt data-line="76">Object Class</dt>
+<dd data-line="77">Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.</dd>
 </dl>
 <ul>
-<li data-line="78">The Object class contains:
+<li data-line="80">The Object class contains:
 <ul>
-<li data-line="79">equals()</li>
-<li data-line="80">toString()</li>
-<li data-line="81">clone()</li>
-<li data-line="82"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Other Methods</a></li>
+<li data-line="81">equals()</li>
+<li data-line="82">toString()</li>
+<li data-line="83">clone()</li>
+<li data-line="84"><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html">Other Methods</a></li>
 </ul>
 </li>
-<li data-line="83">Overriding equals()
+<li data-line="85">Overriding equals()
 <ul>
-<li data-line="84">Check if object is not null</li>
-<li data-line="85">Check for reference equality (==)</li>
-<li data-line="86">Check if the other object is <em>instanceof</em> class or Classes are equals (getClass())
+<li data-line="86">Check if object is not null</li>
+<li data-line="87">Check for reference equality (==)</li>
+<li data-line="88">Check if the other object is <em>instanceof</em> class or Classes are equals (getClass())
 <ul>
-<li data-line="87">instanceof will include subtypes</li>
-<li data-line="88">getClass() does not include subtypes, they have to be identical</li>
+<li data-line="89">instanceof will include subtypes</li>
+<li data-line="90">getClass() does not include subtypes, they have to be identical</li>
 </ul>
 </li>
-<li data-line="89">Cast other object to intended class (guaranteed to work after <em>instanceof</em> check)</li>
-<li data-line="90">Check that each “significant” field in the other object equals(Object) the corresponding field in this object.</li>
+<li data-line="91">Cast other object to intended class (guaranteed to work after <em>instanceof</em> check)</li>
+<li data-line="92">Check that each “significant” field in the other object equals(Object) the corresponding field in this object.</li>
 </ul>
 </li>
 </ul>
-<h3 id="Example-of-Overriding-Object-Class" data-line="93">Example of Overriding Object Class</h3>
-<pre class="code CodeMirror" data-line="94">
+<h3 id="Example-of-Overriding-Object-Class" data-line="95">Example of Overriding Object Class</h3>
+<pre class="code CodeMirror" data-line="96">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span></span>
         <code class="java">public class GrizzlyBear {
     protected String name;
 
     public GrizzlyBear(String name) {
         this.name = name;
     }
+}
 </code>
-      </pre><h4 id="equals-with-instanceof" data-line="103">equals() with <em>instanceof</em></h4>
-<pre class="code CodeMirror" data-line="104">
+      </pre><h4 id="equals-with-instanceof" data-line="106">equals() with <em>instanceof</em></h4>
+<pre class="code CodeMirror" data-line="107">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span></span>
-        <code class="java">  @Override
+        <code class="java">@Override
 public boolean equals(Object other) {
     if (null == other) {
         return false; }
@@ -1165,20 +1168,20 @@ public boolean equals(Object other) {
     return this.name.equals(that.name);
 }
 </code>
-      </pre><h4 id="toString" data-line="120">toString()</h4>
-<pre class="code CodeMirror" data-line="121">
+      </pre><h4 id="toString" data-line="123">toString()</h4>
+<pre class="code CodeMirror" data-line="124">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
-        <code class="java">    @Override
-    public String toString() {
-        return name;
-    }
+        <code class="java">@Override
+public String toString() {
+    return name;
+}
 </code>
       </pre><hr />
-<h3 id="Example-of-Overriding-Object-Class-in-a-Subclass" data-line="128">Example of Overriding Object Class in a Subclass</h3>
-<pre class="code CodeMirror" data-line="129">
+<h3 id="Example-of-Overriding-Object-Class-in-a-Subclass" data-line="131">Example of Overriding Object Class in a Subclass</h3>
+<pre class="code CodeMirror" data-line="132">
         <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span></span>
         <code class="java">public class CanadianGrizzlyBear extends GrizzlyBear {
     protected String province;
 
@@ -1186,9 +1189,10 @@ public boolean equals(Object other) {
         super(name);
         this.province = province;
     }
+}
 </code>
-      </pre><h4 id="equals-with-getClass" data-line="138">equals() with getClass()</h4>
-<pre class="code CodeMirror" data-line="139">
+      </pre><h4 id="equals-with-getClass" data-line="142">equals() with getClass()</h4>
+<pre class="code CodeMirror" data-line="143">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span></span>
         <code class="java">@Override
@@ -1203,10 +1207,10 @@ public boolean equals(Object other) {
     }  
     CanadianGrizzlyBear that = (CanadianGrizzlyBear) other;
     return this.name.equals(that.name) &amp;&amp; this.province.equals(that.province);
-    }
+}
 </code>
-      </pre><h4 id="toString-1" data-line="154">toString()</h4>
-<pre class="code CodeMirror" data-line="155">
+      </pre><h4 id="toString-1" data-line="158">toString()</h4>
+<pre class="code CodeMirror" data-line="159">
         <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
         <code class="java">@Override
@@ -1215,18 +1219,18 @@ public String toString() {
 }
 </code>
       </pre><hr />
-<h2 id="Glossary" data-line="162">Glossary</h2>
+<h2 id="Glossary" data-line="166">Glossary</h2>
 <dl>
-<dt data-line="164"><em>instanceof</em></dt>
-<dd data-line="165">
+<dt data-line="168"><em>instanceof</em></dt>
+<dd data-line="169">
 <ul>
-<li data-line="165">tests whether the object reference on the left-hand side (LHS) is an instance of the type on the right-hand side (RHS) or some subtype.</li>
+<li data-line="169">tests whether the object reference on the left-hand side (LHS) is an instance of the type on the right-hand side (RHS) or some subtype.</li>
 </ul>
 </dd>
-<dt data-line="168">Override</dt>
-<dd data-line="169">provide a new implementation for a method in the subclass.</dd>
-<dt data-line="171">Object Class</dt>
-<dd data-line="172">Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.</dd>
+<dt data-line="172">Override</dt>
+<dd data-line="173">provide a new implementation for a method in the subclass.</dd>
+<dt data-line="175">Object Class</dt>
+<dd data-line="176">Every class has Object as a superclass. All objects, including arrays, implement the methods of this class.</dd>
 </dl>
 </body>
               </html>
